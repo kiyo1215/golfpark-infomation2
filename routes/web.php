@@ -16,11 +16,19 @@ use App\Http\Controllers\GolfparkController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [GolfparkController::class, 'top'])->name('top');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('golfpark.top');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::get('/form', [GolfparkController::class, 'form'])->name('form');
 Route::post('/form', [GolfparkController::class, 'add'])->name('add');
 Route::get('/list', [GolfparkController::class, 'list'])->name('list');
