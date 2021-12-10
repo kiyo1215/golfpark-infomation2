@@ -1,0 +1,49 @@
+body {
+  background-color: black;
+}
+
+main {
+  width: 70%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 50px 20px 60px;
+}
+
+p {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.text-danger {
+  color: red;
+}
+
+button {
+  display: block;
+  text-align: center;
+  margin: 30px auto 0;
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 26px;
+  border: 1px solid blue;
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+}
+
+button:focus {
+  opacity: 0.5;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  font-size: 20px;
+}
+
+textarea {
+  font-size: 20px;
+  width: 100%;
+}

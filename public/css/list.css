@@ -1,0 +1,64 @@
+body {
+  background-color: black;
+  padding: 0 20px;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  margin: 0 auto;
+  padding: 50px 20px 40px;
+}
+
+.list {
+  position: relative;
+  margin: 80px 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.list a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.list a:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+button {
+  position: absolute;
+  right: 0;
+  height: 30px;
+  color: white;
+  background-color: blue;
+  border: 1px solid blue;
+}
+
+
+.add-link a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 26px;
+  border: 2px solid blue;
+  margin: 0 auto;
+  font-size: 16px;
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+}
+
+.add-link a:focus {
+  opacity: 0.5;
+}
+
+.delete {
+  cursor: pointer;
+}
