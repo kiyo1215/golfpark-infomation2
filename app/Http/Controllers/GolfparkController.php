@@ -58,7 +58,7 @@ class GolfparkController extends Controller
         $form = $request->all();
         Golfpark::create($form);
         \Session::flash('add_msg', '追加しました');
-        return redirect('/top');
+        return redirect('/dashboard');
     }
     public function showDetail($id)
     {
@@ -74,7 +74,7 @@ class GolfparkController extends Controller
         $param = ['id' => $request->id];
         DB::table('golfparks')->where('id', $request->id)->delete();
          \Session::flash('delete_msg', '削除しました');
-        return redirect('/top');
+        return redirect('/dashboard');
     }
     public function edit(Request $request)
     {
@@ -98,6 +98,6 @@ class GolfparkController extends Controller
         ];
         DB::table('golfparks')->where('id', $request->id)->update($param);
          \Session::flash('update_msg', '編集しました');
-        return redirect('/top');
+        return redirect('/dashboard');
  }
 }

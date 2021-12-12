@@ -9,68 +9,29 @@
   <title>ログインフォーム</title>
 </head>
 <body>
-    <div class="main">
-        <h1>Golfpark Infomation<br>for Driver</h1>
-        <h2>ログインフォーム</h2>
-        <x-guest-layout>
-        <x-auth-card>
-        <x-slot name="logo">
-            <!-- <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a> -->
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('名前')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('メールアドレス')" />
+  <div class="main">
+    <h1>Golfpark Infomation<br>for Driver</h1>
+    <h2>新規登録</h2>
+   <form method="POST" action="{{ route('register') }}">
+    @csrf
+      <p><input type="text" name="name" placeholder="名前"></p>
+      <p><input type="email" name="email" placeholder="メールアドレス"></p>
+      @if ($errors->has('email'))
+        <div class="text-danger">
+          {{ $errors->first('email') }}
+        </div>
+      @endif
+      <p><input type="password" name="password" placeholder="パスワード"></p>
+      @if ($errors->has('password'))
+        <div class="text-danger">
+          {{ $errors->first('password') }}
+        </div>
+      @endif
+      <p><input type="password" name="password_confirmation" placeholder="確認パスワード"　required></p>
+      <button type="submit">登録する</button>
+    </form>
     
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('パスワード')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('確認パスワード')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <!-- <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a> -->
-
-                <x-button class="ml-4">
-                    {{ __('登録する') }}
-                </x-button>
-            </div>
-        </form>
-</div>
-    </x-auth-card>
-</x-guest-layout>
+  </div>
+  
 </body>
 </html>
