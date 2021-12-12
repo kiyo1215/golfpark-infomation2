@@ -13,9 +13,14 @@
   <div class="main">
 
 
-  @if (session('login_success'))
+  <!-- @if (session('login_success'))
    <div>{{ session('login_success')}}</div>
-  @endif
+  @endif -->
+  @if (session('register_msg'))
+    <div class="session">
+        {{ session('register_msg') }}
+    </div>
+    @endif
     <h1>Golfpark Infomation<br>for Driver</h1>
 @if (session('add_msg'))
     <div class="session">

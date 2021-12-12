@@ -13,9 +13,21 @@
   <div class="main">
 
 
-  @if (session('login_success'))
+  <!-- @if (session('login_success'))
    <div>{{ session('login_success')}}</div>
-  @endif
+  @endif -->
+  @if (session('register_msg'))
+    <div class="session">
+        {{ session('register_msg') }}
+    </div>
+    @endif
+<!-- <x-app-layout>
+  <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
+</x-app-layout> -->
     <h1>Golfpark Infomation<br>for Driver</h1>
 @if (session('add_msg'))
     <div class="session">
@@ -53,6 +65,8 @@
       
     
   </div>
+
+  
   
 </body>
 </html>

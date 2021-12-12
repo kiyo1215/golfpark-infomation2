@@ -48,6 +48,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+        \Session::flash('register_msg', '登録しました');
 
         // return redirect(RouteServiceProvider::HOME);
         return view('golfpark.top');

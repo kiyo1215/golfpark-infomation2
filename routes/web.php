@@ -26,10 +26,10 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/form', [GolfparkController::class, 'form'])->name('form');
-Route::post('/form', [GolfparkController::class, 'add'])->name('add');
-Route::get('/list', [GolfparkController::class, 'list'])->name('list');
-Route::get('/list/info/{id}', [GolfparkController::class, 'showDetail'])->name('show');
-Route::post('/list/delete', [GolfparkController::class, 'delete'])->name('delete');
-Route::get('/info/edit/{id}', [GolfparkController::class, 'edit'])->name('edit');
-Route::post('/info/update', [GolfparkController::class, 'update'])->name('update');
+Route::get('/form', [GolfparkController::class, 'form'])->middleware(['auth'])->name('form');
+Route::post('/form', [GolfparkController::class, 'add'])->middleware(['auth'])->name('add');
+Route::get('/list', [GolfparkController::class, 'list'])->middleware(['auth'])->name('list');
+Route::get('/list/info/{id}', [GolfparkController::class, 'showDetail'])->middleware(['auth'])->name('show');
+Route::post('/list/delete', [GolfparkController::class, 'delete'])->middleware(['auth'])->name('delete');
+Route::get('/info/edit/{id}', [GolfparkController::class, 'edit'])->middleware(['auth'])->name('edit');
+Route::post('/info/update', [GolfparkController::class, 'update'])->middleware(['auth'])->name('update');
