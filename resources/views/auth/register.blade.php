@@ -21,6 +21,7 @@
           {{ $errors->first('email') }}
         </div>
       @endif
+      <p>パスワードは半角英数字８文字以上です</p>
       <p><input type="password" name="password" placeholder="パスワード"></p>
       @if ($errors->has('password'))
         <div class="text-danger">
