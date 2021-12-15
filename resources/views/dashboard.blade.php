@@ -16,11 +16,11 @@
   <!-- @if (session('login_success'))
    <div>{{ session('login_success')}}</div>
   @endif -->
-  @if (session('register_msg'))
+  <!-- @if (session('register_msg'))
     <div class="session">
         {{ session('register_msg') }}
     </div>
-    @endif
+    @endif -->
 <!-- <x-app-layout>
   <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
