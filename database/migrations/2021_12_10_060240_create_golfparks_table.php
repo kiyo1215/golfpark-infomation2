@@ -17,16 +17,16 @@ class CreateGolfparksTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('name_kana');
-            $table->string('roof')->nullable();
-            $table->string('wash')->nullable();
-            $table->string('restroom')->nullable();
-            $table->text('round')->nullable();
-            $table->string('lunch')->nullable();
-            $table->string('smoke')->nullable();
-            $table->text('golfbag')->nullable();
-            $table->text('baggage')->nullable();
-            $table->text('info')->nullable();
-            $table->timestamps()->nullable();
+            $table->string('roof');
+            $table->string('wash');
+            $table->string('restroom');
+            $table->text('round');
+            $table->string('lunch');
+            $table->string('smoke');
+            $table->text('golfbag');
+            $table->text('baggage');
+            $table->text('info');
+            $table->timestamps();
         });
     }
 
