@@ -7,6 +7,7 @@ body {
   height: 100vh;
   background-color: white;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .session {
@@ -15,7 +16,7 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
   padding: 45px 0;
