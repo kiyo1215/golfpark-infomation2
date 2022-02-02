@@ -18,34 +18,34 @@ class GolfparkController extends Controller
         $row = $request->row;
         
         if($row === '1'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['あ', 'か'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['あ', 'か'] )->oldest('name_kana')->get();
         };
         if($row === '2'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['か', 'さ'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['か', 'さ'] )->oldest('name_kana')->get();
         };
         if($row === '3'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['さ', 'た'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['さ', 'た'] )->oldest('name_kana')->get();
         };
         if($row === '4'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['た', 'な'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['た', 'な'] )->oldest('name_kana')->get();
         };
         if($row === '5'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['な', 'は'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['な', 'は'] )->oldest('name_kana')->get();
         };
         if($row === '6'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['は', 'ま'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['は', 'ま'] )->oldest('name_kana')->get();
         };
         if($row === '7'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['ま', 'や'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['ま', 'や'] )->oldest('name_kana')->get();
         };
         if($row === '8'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['や', 'ら'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['や', 'ら'] )->oldest('name_kana')->get();
         };
         if($row === '9'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['ら', 'わ'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['ら', 'わ'] )->oldest('name_kana')->get();
         };
         if($row === '10'){
-            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['わ', 'わ'] )->get();
+            $golfparks = DB::table('golfparks')->whereBetween('name_kana', ['わ', 'わ'] )->oldest('name_kana')->get();
         };
         return view('golfpark.list', ['golfparks' => $golfparks]);
     }
